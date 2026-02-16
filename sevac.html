@@ -1,0 +1,2348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEVAC - Terrenate</title>
+    <link rel="icon" href="img/cropped-Logo-Terrenate-2024-2027-150x150.png">
+    
+    <!-- Fuentes de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Archivo CSS externo -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header y Navegación -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-img">
+                        <img src="img/cropped-Logo-Terrenate-2024-2027-150x150.png" alt="Logo Terrenate">
+                    </div>
+                    <div class="logo-text">
+                        <h1>TERRENATE</h1>
+                        <p>Municipio de Terrenate, Tlaxcala</p>
+                    </div>
+                </div>
+                
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <div class="nav-overlay" id="navOverlay"></div> <!-- MOVER AQUÍ -->
+                
+                <nav class="nav-menu" id="navMenu">
+                    <ul> 
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">
+                                <i class="fas fa-home"></i>
+                                <span>INICIO</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item has-dropdown">
+                            <a href="nuestro-municipio.html" class="nav-link">
+                                <i class="fas fa-users"></i>
+                                <span>NUESTRO MUNICIPIO</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown">
+                                <li><a href="marco-juridico.html" class="dropdown-item">
+                                    <i class="fas fa-file-alt"></i>
+                                    <span>MARCO JURÍDICO</span>
+                                </a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item has-dropdown">
+                            <a href="transparencia.html" class="nav-link">
+                                <i class="fas fa-search"></i>
+                                <span>TRANSPARENCIA</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown">
+                                <li><a href="avisos-de-privacidad.html" class="dropdown-item">
+                                    <i class="fas fa-file-alt"></i>
+                                    <span>AVISOS DE PRIVACIDAD</span>
+                                </a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="sevac.html" class="nav-link">
+                                <i class="fas fa-chart-bar"></i>
+                                <span>SEVAC</span>
+                            </a>
+                        </li>
+
+                        <!-- TRÁMITES Y SERVICIOS activo -->
+                        <li class="nav-item has-dropdown">
+                            <a href="tramites-servicios.html" class="nav-link active">
+                                <i class="fas fa-file-signature"></i>
+                                <span>TRÁMITES Y SERVICIOS</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown">
+                                <li><a href="tesoreria.html" class="dropdown-item">
+                                    <i class="fas fa-money-bill"></i>
+                                    <span>TESORERÍA</span>
+                                </a></li>
+                                <li><a href="obras-publicas.html" class="dropdown-item">
+                                    <i class="fas fa-hammer"></i>
+                                    <span>OBRAS PÚBLICAS</span>
+                                </a></li>
+                                <li><a href="registro-civil.html" class="dropdown-item">
+                                    <i class="fas fa-id-card"></i>
+                                    <span>REGISTRO CIVIL</span>
+                                </a></li>
+                                <li><a href="secretaria.html" class="dropdown-item">
+                                    <i class="fas fa-user-tie"></i>
+                                    <span>SECRETARÍA DEL AYUNTAMIENTO</span>
+                                </a></li>
+                                <li><a href="dif.html" class="dropdown-item">
+                                    <i class="fas fa-comments"></i>
+                                    <span>DIF</span>
+                                </a></li>
+                                <!-- Ítem activo: DESARROLLO ECONÓMICO -->
+                                <li><a href="desarrollo-economico.html" class="dropdown-item active">
+                                    <i class="fas fa-chart-area"></i>
+                                    <span>DESARROLLO ECONÓMICO</span>
+                                </a></li>
+                                <li><a href="seguridad-publica.html" class="dropdown-item">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>SEGURIDAD PÚBLICA</span>
+                                </a></li>
+                                <li><a href="servcios-municipales.html" class="dropdown-item">
+                                    <i class="fas fa-tools"></i>
+                                    <span>SERVICIOS MUNICIPALES</span>
+                                </a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner simplificado -->
+    <section class="banner">
+        <div class="container">
+            <h1>SISTEMA ESTATAL DE VINCULACIÓN Y ACTUALIZACIÓN CONTABLE</h1>
+            <p>Información financiera, presupuestal y contable del Municipio de Terrenate, Tlaxcala</p>
+        </div>
+    </section>
+
+    <!-- Contenido Principal -->
+    <main class="main-container container">
+        <!-- Cuentas Públicas por Año -->
+        <div class="year-accordion">
+            <h2 class="section-title">Cuentas Públicas por Año</h2>
+            
+            <!-- Año 2024 -->
+            <div class="year-item fade-in">
+                <div class="year-header" data-year="2024">
+                    <h2><i class="fas fa-folder"></i> 2024</h2>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="year-content" id="year-2024">
+                    <!-- Trimestre 1 -->
+                    <div class="quarter-accordion">
+                        <div class="quarter-item">
+                            <div class="quarter-header" data-quarter="q1-2024">
+                                <h3><i class="fas fa-folder-open"></i> PRIMER TRIMESTRE</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="quarter-content" id="q1-2024">
+                                <div class="documents">
+                                    <div class="document-list">
+                                        <p style="text-align: center; padding: 20px; color: #666; grid-column: 1 / -1;">Documentos del primer trimestre 2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Trimestre 2 -->
+                        <div class="quarter-item">
+                            <div class="quarter-header" data-quarter="q2-2024">
+                                <h3><i class="fas fa-folder-open"></i> SEGUNDO TRIMESTRE</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="quarter-content" id="q2-2024">
+                                <div class="documents">
+                                    <div class="document-list">
+                                        <p style="text-align: center; padding: 20px; color: #666; grid-column: 1 / -1;">Documentos del segundo trimestre 2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Trimestre 3 -->
+                        <div class="quarter-item">
+                            <div class="quarter-header" data-quarter="q3-2024">
+                                <h3><i class="fas fa-folder-open"></i> TERCER TRIMESTRE</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="quarter-content" id="q3-2024">
+                                <div class="documents">
+                                    <div class="document-list">
+                                        <!-- Documentos del tercer trimestre 2024 -->
+                                        <div class="document-item">
+                                            <div class="document-number">1</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.1.10 RELACIÓN DE CUENTAS BANCARIAS</div>
+                                                <div class="document-actions">
+                                                    <a href=" sevac/2024/TERCER TRIMESTRE/D.1.10.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">2</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.1.11</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/D.1.11.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">3</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.1.12</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/D.1.12.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">4</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.1.15</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/D.1.15.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">5</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.1.17</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/D.1.17.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">6</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.1.20</div>
+                                                <div class="document-actions">
+                                                    <a href=" sevac/2024/TERCER TRIMESTRE/D.1.20.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">7</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.1.21</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/D.1.21.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">8</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.1.22</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/D.1.22.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">9</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.2.1 ESTADO DE ACTIVIDADES</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/D.2.1-Estado-de-Actividades.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">10</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.2.2 ESTADO DE SITUACION FINANCIERA</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/D.2.2-Estado-de-Situacion-Financiera.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="document-item">
+                                            <div class="document-number">12</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.2.3 ESTADO DE VARIACIÓN EN LA HACIENDA PÚBLICA</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/D.2.3-Estado-de-Variacion-en-la-Hacienda-Publica.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">13</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.2.4 ESTADO DE CAMBIOS EN LA SITUACIÓN FINANCIERA</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/D.2.4-Estado-de-Cambios-en-la-Situacion-Financiera.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">14</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.2.5 ESTADO DE FLUJOS DE EFECTIVO</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/D.2.5-Estado-de-Flujos-de-Efectivo.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">15</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.2.6 PASIVOS CONTINGENTES</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/11/D.2.6-Informe-sobre-Pasivos-Contingentes.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">16</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.2.7 NOTAS AL ESTADO DE SITUACIÓN FINANCIERA</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/D.2.7-Notas-a-los-Estados-Financieros.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">17</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.2.8 ESTADO ANALÍTICO DEL ACTIVO</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/D.2.8-Estado-Analitico-del-Activo.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">18</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.2.9 ESTADO ANALÍTICO DE LA DEUDA Y OTROS PASIVOS</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/D.2.9-Estado-Analitico-de-la-Deuda-y-Otros-Pasivos.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">19</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.3.1 ESTADO ANALÍTICO DE INGRESOS</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/D.3.1-Estado-Analitico-de-Ingresos.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">20</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.3.2 ESTADO ANALÍTICO DEL EJERCICIO DEL PRESUPUESTO DE EGRESOS</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/D.3.2-Estado-Analitico-del-Ejercicio-del-Presupuesto-de-Egresos-con-base-en-la-Clasificacion-Administrativa.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="document-item">
+                                            <div class="document-number">21</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.3.3 ESTADO ANALÍTICO DEL EJERCICIO DEL PRESUPUESTO DE EGRESOS, CLASIFICACIÓN ECONÓMICA (POR TIPO DE GASTO)</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/D.3.3.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">22</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.3.4 ESTADO ANALÍTICO DEL EJERCICIO DEL PRESUPUESTO DE EGRESOS, CLASIFICACIÓN POR OBJETO DEL GASTO</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/D.3.4.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">23</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.3.5 ESTADO ANALÍTICO DEL EJERCICIO DEL PRESUPUESTO DE EGRESOS, CLASIFICACIÓN FUNCIONAL (FINALIDAD Y FUNCIÓN)</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/D.3.5.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">24</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.3.6 ENDEUDAMIENTO NETO</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/D.3.6.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">25</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.3.7 INTERESES DE LA DEUDA</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/D.3.7.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">26</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.4.1 GASTO POR CATEGORÍA PROGRAMÁTICA</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/D.4.1.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">27</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.4.2 INDICADORES DE RESULTADOS</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/D.4.2.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">28</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.4.3 PROGRAMAS Y PROYECTOS DE INVERSIÓN</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/D.4.3.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">29</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.5.1</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/D.5.1.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">30</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.5.2</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/D.5.2.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="document-item">
+                                            <div class="document-number">31</div>
+                                            <div class="document-info">
+                                                <div class="document-title">E.8.1.1</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/E.8.1.1.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">32</div>
+                                            <div class="document-info">
+                                                <div class="document-title">E.8.1.2</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/E.8.1.2.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">33</div>
+                                            <div class="document-info">
+                                                <div class="document-title">E.8.1.3</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/E.8.1.3.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">34</div>
+                                            <div class="document-info">
+                                                <div class="document-title">E.8.1.4</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/E.8.1.4.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">35</div>
+                                            <div class="document-info">
+                                                <div class="document-title">E.8.1.5</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/E.8.1.5.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">36</div>
+                                            <div class="document-info">
+                                                <div class="document-title">E.8.1.6</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/E.8.1.6.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">37</div>
+                                            <div class="document-info">
+                                                <div class="document-title">E.8.1.7</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/E.8.1.7.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">38</div>
+                                            <div class="document-info">
+                                                <div class="document-title">E.8.1.8</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/E.8.1.8.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">39</div>
+                                            <div class="document-info">
+                                                <div class="document-title">E.8.1.9</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/E.8.1.9.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">40</div>
+                                            <div class="document-info">
+                                                <div class="document-title">E.8.2.1</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/E.8.2.1.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="document-item">
+                                            <div class="document-number">41</div>
+                                            <div class="document-info">
+                                                <div class="document-title">E.8.2.2</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/E.8.2.2.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">42</div>
+                                            <div class="document-info">
+                                                <div class="document-title">E.8.2.3</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/E.8.2.3.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">43</div>
+                                            <div class="document-info">
+                                                <div class="document-title">E.8.2.4</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/E.8.2.4.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">44</div>
+                                            <div class="document-info">
+                                                <div class="document-title">E.8.2.5</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/E.8.2.5.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">45</div>
+                                            <div class="document-info">
+                                                <div class="document-title">E.8.2.6</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/E.8.2.6.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">46</div>
+                                            <div class="document-info">
+                                                <div class="document-title">E.8.2.7</div>
+                                                <div class="document-actions">
+                                                    <span class="document-link unavailable">Próximamente</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">47</div>
+                                            <div class="document-info">
+                                                <div class="document-title">E.8.2.8</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/E.8.2.8.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">48</div>
+                                            <div class="document-info">
+                                                <div class="document-title">E.8.2.9</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/E.8.2.9.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">49</div>
+                                            <div class="document-info">
+                                                <div class="document-title">E.8.2.10</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/E.8.2.10.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">50</div>
+                                            <div class="document-info">
+                                                <div class="document-title">E.8.2.11</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/E.8.2.11.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">51</div>
+                                            <div class="document-info">
+                                                <div class="document-title">E.8.3.1</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/E.8.3.1.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">52</div>
+                                            <div class="document-info">
+                                                <div class="document-title">E.8.3.2</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/E.8.3.2.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">53</div>
+                                            <div class="document-info">
+                                                <div class="document-title">23A</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/23A.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="document-item">
+                                            <div class="document-number">1</div>
+                                            <div class="document-info">
+                                                <div class="document-title">ENDEUDAMIENTO NETO</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/Endeudamiento-Neto.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">2</div>
+                                            <div class="document-info">
+                                                <div class="document-title">ESTADO ANALÍTICO DE LA DEUDA Y OTROS PASIVOS</div>
+                                                <div class="document-actions">
+                                                    <span class="document-link unavailable">Próximamente</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">3</div>
+                                            <div class="document-info">
+                                                <div class="document-title">ESTADO ANALÍTICO DE LOS INGRESOS</div>
+                                                <div class="document-actions">
+                                                    <span class="document-link unavailable">Próximamente</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">4</div>
+                                            <div class="document-info">
+                                                <div class="document-title">ESTADO ANALÍTICO DEL ACTIVO</div>
+                                                <div class="document-actions">
+                                                    <span class="document-link unavailable">Próximamente</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">5</div>
+                                            <div class="document-info">
+                                                <div class="document-title">ESTADO ANALÍTICO DEL EJERCICIO DEL PRESUPUESTO DE EGRESOS CLASIFICACIÓN ADMINISTRATIVA</div>
+                                                <div class="document-actions">
+                                                    <span class="document-link unavailable">Próximamente</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">6</div>
+                                            <div class="document-info">
+                                                <div class="document-title">ESTADO ANALÍTICO DEL EJERCICIO DEL PRESUPUESTO DE EGRESOS CLASIFICACIÓN ECONÓMICA</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/Estado-Analitico-del-Ejercicio-del-Presupuesto-de-Egresos-con-base-en-la-Clasificacion-Economica.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">7</div>
+                                            <div class="document-info">
+                                                <div class="document-title">ESTADO ANALÍTICO DEL EJERCICIO DEL PRESUPUESTO DE EGRESOS CLASIFICACIÓN FUNCIONAL</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/Estado-Analitico-del-Ejercicio-del-Presupuesto-de-Egresos-calsificacion-funcional.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">8</div>
+                                            <div class="document-info">
+                                                <div class="document-title">ESTADO ANALÍTICO DEL EJERCICIO DEL PRESUPUESTO DE EGRESOS CLASIFICACIÓN POR OBJETO DEL GASTO</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/Estado-Analitico-del-Ejercicio-del-Presupuesto-de-Egresos-por-objeto-del-gasto.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">9</div>
+                                            <div class="document-info">
+                                                <div class="document-title">ESTADO DE ACTIVIDADES</div>
+                                                <div class="document-actions">
+                                                    <span class="document-link unavailable">Próximamente</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">10</div>
+                                            <div class="document-info">
+                                                <div class="document-title">ESTADO DE CAMBIOS EN LA SITUACIÓN FINANCIERA</div>
+                                                <div class="document-actions">
+                                                    <span class="document-link unavailable">Próximamente</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">11</div>
+                                            <div class="document-info">
+                                                <div class="document-title">ESTADO DE FLUJOS DE EFECTIVO</div>
+                                                <div class="document-actions">
+                                                    <span class="document-link unavailable">Próximamente</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">12</div>
+                                            <div class="document-info">
+                                                <div class="document-title">ESTADO DE SITUACIÓN FINANCIERA</div>
+                                                <div class="document-actions">
+                                                    <span class="document-link unavailable">Próximamente</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="document-item">
+                                            <div class="document-number">13</div>
+                                            <div class="document-info">
+                                                <div class="document-title">ESTADO DE VARIACIÓN EN LA HACIENDA PÚBLICA</div>
+                                                <div class="document-actions">
+                                                    <span class="document-link unavailable">Próximamente</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">14</div>
+                                            <div class="document-info">
+                                                <div class="document-title">GASTO POR CATEGORÍA PROGRAMÁTICA</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/Gasto-por-categoria-programatica.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">15</div>
+                                            <div class="document-info">
+                                                <div class="document-title">INDICADORES DE RESULTADOS</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/indicadores.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">16</div>
+                                            <div class="document-info">
+                                                <div class="document-title">INFORME SOBRE PASIVOS CONTINGENTES</div>
+                                                <div class="document-actions">
+                                                    <span class="document-link unavailable">Próximamente</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">17</div>
+                                            <div class="document-info">
+                                                <div class="document-title">INTERESES DE LA DEUDA</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/Interes-de-la-deuda.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">18</div>
+                                            <div class="document-info">
+                                                <div class="document-title">INVENTARIO BIENES INMUEBLES</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/inventario-bienes-inmuebles.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">19</div>
+                                            <div class="document-info">
+                                                <div class="document-title">INVENTARIO DE BIENES MUEBLES</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/inventario-bienes-muebles.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">20</div>
+                                            <div class="document-info">
+                                                <div class="document-title">NOTAS AL ESTADO DE SITUACIÓN FINANCIERA</div>
+                                                <div class="document-actions">
+                                                    <span class="document-link unavailable">Próximamente</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">21</div>
+                                            <div class="document-info">
+                                                <div class="document-title">PROGRAMAS Y PROYECTOS DE INVERSIÓN</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/Programas-y-proyectos-de-inversion.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">22</div>
+                                            <div class="document-info">
+                                                <div class="document-title">RECURSOS FEDERALES</div>
+                                                <div class="document-actions">
+                                                    <span class="document-link unavailable">Próximamente</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">23</div>
+                                            <div class="document-info">
+                                                <div class="document-title">PARAMUNICIPALES</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/Paramunicipales.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">24</div>
+                                            <div class="document-info">
+                                                <div class="document-title">EST. DE ACT Y EST. DE SIT. FIN</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/EST.-DE-ACT-Y-EST.-DE-SIT.-FIN.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="document-item">
+                                            <div class="document-number">25</div>
+                                            <div class="document-info">
+                                                <div class="document-title">OFICIOS DE COMISIÓN</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/OFICIOS-DE-COMISION.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">26</div>
+                                            <div class="document-info">
+                                                <div class="document-title">TABULADOR EJERCICIO FISCAL 2024</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/TERCER TRIMESTRE/TABULADOR-EJERCICIO-FISCAL-2024.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Agrega aquí más documentos -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Trimestre 4 -->
+                        <div class="quarter-item">
+                            <div class="quarter-header" data-quarter="q4-2024">
+                                <h3><i class="fas fa-folder-open"></i> CUARTO TRIMESTRE</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="quarter-content" id="q4-2024">
+                                <div class="documents">
+                                    <div class="document-list">
+                                        <div class="document-item">
+                                            <div class="document-number">1</div>
+                                            <div class="document-info">
+                                                <div class="document-title">C.2.7</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/CUARTO TRIMESTRE/C.2.7.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">2</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.1.11</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/CUARTO TRIMESTRE/D.1.11.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">3</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.1.12</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/CUARTO TRIMESTRE/D.1.12.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">4</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.1.17</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/CUARTO TRIMESTRE/D.1.17-.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">5</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.1.19</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/CUARTO TRIMESTRE/D.1.19-.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">6</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.1.20</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/CUARTO TRIMESTRE/D.1.20-.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">7</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.5.4</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2024/CUARTO TRIMESTRE/D.5.4.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Agrega aquí más documentos -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Año 2025 - COMPLETO CON TODOS LOS TRIMESTRES Y DOCUMENTOS -->
+            <div class="year-item fade-in">
+                <div class="year-header" data-year="2025">
+                    <h2><i class="fas fa-folder"></i> 2025</h2>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="year-content" id="year-2025">
+                    <div class="quarter-accordion">
+                        <!-- PRIMER TRIMESTRE 2025 -->
+                        <div class="quarter-item">
+                            <div class="quarter-header" data-quarter="q1-2025">
+                                <h3><i class="fas fa-folder-open"></i> PRIMER TRIMESTRE</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="quarter-content" id="q1-2025">
+                                <div class="documents">
+                                    <div class="document-list">
+                                        <div class="document-item">
+                                            <div class="document-number">1</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.1.1 INFORMACIÓN ADICIONAL QUE SE INCLUYE EN LA INICIATIVA DE LA LEY DE INGRESOS</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/PRIMER TRIMESTRE/D.1.1-Informacion-adicional-que-se-incluye-en-la-Iniciativa-de-la-Ley-de-Ingresos.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">2</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.1.2</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/PRIMER TRIMESTRE/D.1.2.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">3</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.1.3 INFORMACIÓN QUE EXPLICA DE MANERA SENCILLA Y EN FORMATOS ACCESIBLES EL CONTENIDO DE LA LEY DE INGRESOS Y DEL PRESUPUESTO DE EGRESOS, PARA LA DIFUSIÓN A LA CIUDADANÍA</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/PRIMER TRIMESTRE/D.1.3-Informacion-que-explica-de-manera-sencilla-y-en-formatos-accesibles-el-contenido-de-la-Ley-de-Ingresos-y-del-Presupuesto-de-Egresos-para-la-difusion-a-la-ciudadania.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">4</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.1.4 CALENDARIO DE INGRESOS BASE MENSUAL</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/PRIMER TRIMESTRE/D.1.4-Calendario-de-Ingresos-base-mensual.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">5</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.1.5 CALENDARIO DEL PRESUPUESTO DE EGRESOS BASE MENSUAL</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/PRIMER TRIMESTRE/D.1.5-Calendario-del-Presupuesto-de-Egresos-base-mensual.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">6</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.1.6 LEY DE INGRESOS APROBADA</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/PRIMER TRIMESTRE/D.1.6-Ley-de-Ingresos-aprobada.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">7</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.1.7 PRESUPUESTO DE EGRESOS APROBADO</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/PRIMER TRIMESTRE/D.1.7-Presupuesto-de-Egresos-aprobado.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">8</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.1.8 DOCUMENTOS DE APROBACIÓN DE LA LEY DE INGRESOS</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/PRIMER TRIMESTRE/D.1.8-Documentos-de-aprobacion-de-la-Ley-de-Ingresos.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">9</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.1.9 DOCUMENTOS DE APROBACIÓN DEL PRESUPUESTO DE EGRESOS</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/PRIMER TRIMESTRE/D.1.9-Documentos-de-aprobacion-del-Presupuesto-de-Egresos.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">10</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.1.11 INFORMACIÓN DE LOS MONTOS EFECTIVAMENTE PAGADOS DURANTE EL PERIODO POR CONCEPTO DE AYUDAS Y SUBSIDIOS</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/PRIMER TRIMESTRE/D.1.11-Informacion-de-los-montos-efectivamente-pagados-durante-el-periodo-por-concepto-de-ayudas-y-subsidios.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">11</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.1.12 INFORMACIÓN DE LOS MONTOS PLENAMENTE IDENTIFICADOS POR ORDEN DE GOBIERNO, DE LOS PROGRAMAS EN QUE CONCURRAN RECURSOS FEDERALES</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/PRIMER TRIMESTRE/D.1.12-Informacion-de-los-montos-plenamente-identificados-por-orden-de-gobierno-de-los-programas-en-que-concurran-recursos-federales.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="document-item">
+                                            <div class="document-number">12</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.1.16 INFORMACIÓN ANUAL SOBRE LA APLICACIÓN DE LOS RECURSOS FEDERALES PARA EL FONDO DE APORTACIONES PARA LA INFRAESTRUCTURA SOCIAL (FAIS)</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/PRIMER TRIMESTRE/D.1.16-Informacion-anual-sobre-la-aplicacion-de-los-recursos-federales-para-el-Fondo-de-Aportaciones-para-la-Infraestructura-Social-FAIS.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">13</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.1.17 INFORMACIÓN DE APLICACIÓN DE RECURSOS FEDERALES DEL FONDO DE APORTACIONES PARA EL FORTALECIMIENTO DE LOS MUNICIPIOS Y DEMARCACIONES TERRITORIALES DEL DISTRITO FEDERAL (FORTAMUN)</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/PRIMER TRIMESTRE/D.1.17-Informacion-de-aplicacion-de-recursos-federales-del-Fondo-de-Aportaciones-para-el-Fortalecimiento-de-los-Municipios-y-Demarcaciones-Territoriales-del-Distrito-Federal-FORTAMUN.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">14</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.1.19 INFORMACIÓN RELATIVA A LAS OBLIGACIONES QUE SE PAGAN O GARANTIZAN CON RECURSOS DE FONDOS FEDERALES</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/PRIMER TRIMESTRE/D.1.19-Informacion-relativa-a-las-obligaciones-que-se-pagan-o-garantizan-con-recursos-de-fondos-federales.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">15</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.1.20 INFORMACIÓN TRIMESTRAL DEL EJERCICIO Y DESTINO DE GASTO FEDERALIZADO Y REINTEGROS</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/PRIMER TRIMESTRE/D.1.20-Informacion-trimestral-del-ejercicio-y-destino-de-gasto-federalizado-y-reintegros.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">16</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.2.1 ESTADO DE ACTIVIDADES</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/PRIMER TRIMESTRE/D.2.1-Estado-de-Actividades.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">17</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.2.2 ESTADO DE SITUACIÓN FINANCIERA</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/PRIMER TRIMESTRE/D.2.2-Estado-de-Situacion-Financiera.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">18</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.2.3 ESTADO DE VARIACIÓN EN LA HACIENDA PÚBLICA</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/PRIMER TRIMESTRE/D.2.3-Estado-de-Variacion-en-la-Hacienda-Publica.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">19</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.2.4 ESTADO DE CAMBIOS EN LA SITUACIÓN FINANCIERA</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/PRIMER TRIMESTRE/D.2.4-Estado-de-Cambios-en-la-Situacion-Financiera.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">20</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.2.5 ESTADO DE FLUJOS DE EFECTIVO</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/PRIMER TRIMESTRE/D.2.5-Estado-de-Flujos-de-Efectivo.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">21</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.2.6 INFORME SOBRE PASIVOS CONTINGENTES</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/PRIMER TRIMESTRE/D.2.6-Informe-sobre-Pasivos-Contingentes.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="document-item">
+                                            <div class="document-number">22</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.2.7 NOTAS A LOS ESTADOS FINANCIEROS</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/PRIMER TRIMESTRE/D.2.7-Notas-a-los-Estados-Financieros.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">23</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.2.8 ESTADO ANALÍTICO DEL ACTIVO</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/PRIMER TRIMESTRE/D.2.8-Estado-Analitico-del-Activo.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">24</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.2.9 ESTADO ANALÍTICO DE LA DEUDA Y OTROS PASIVOS</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/PRIMER TRIMESTRE/D.2.9-Estado-Analitico-de-la-Deuda-y-Otros-Pasivos.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">25</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.3.1 ESTADO ANALÍTICO DE INGRESOS</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/PRIMER TRIMESTRE/D.3.1-Estado-Analitico-de-Ingresos.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">26</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.3.2 ESTADO ANALÍTICO DEL EJERCICIO DEL PRESUPUESTO DE EGRESOS CON BASE EN LA CLASIFICACIÓN ADMINISTRATIVA</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/PRIMER TRIMESTRE/D.3.2-Estado-Analitico-del-Ejercicio-del-Presupuesto-de-Egresos-con-base-en-la-Clasificacion-Administrativa.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">27</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.3.3 ESTADO ANALÍTICO DEL EJERCICIO DEL PRESUPUESTO DE EGRESOS CON BASE EN LA CLASIFICACIÓN ECONÓMICA (POR TIPO DE GASTO)</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/PRIMER TRIMESTRE/D.3.3-Estado-Analitico-del-Ejercicio-del-Presupuesto-de-Egresos-con-base-en-la-Clasificacion-Economica-por-Tipo-de-Gasto.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">28</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.3.4 ESTADO ANALÍTICO DEL EJERCICIO DEL PRESUPUESTO DE EGRESOS CON BASE EN LA CLASIFICACIÓN POR OBJETO DEL GASTO</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/PRIMER TRIMESTRE/D.3.4-Estado-Analitico-del-Ejercicio-del-Presupuesto-de-Egresos-con-base-en-la-Clasificacion-por-Objeto-del-Gasto.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">29</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.3.5 ESTADO ANALÍTICO DEL EJERCICIO DEL PRESUPUESTO DE EGRESOS CON BASE EN LA CLASIFICACIÓN FUNCIONAL</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/PRIMER TRIMESTRE/D.3.5-Estado-Analitico-del-Ejercicio-del-Presupuesto-de-Egresos-con-base-en-la-Clasificacion-Funcional.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">30</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.3.6 ENDEUDAMIENTO NETO</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/PRIMER TRIMESTRE/D.3.6-Endeudamiento-Neto.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">31</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.3.7 INTERESES DE LA DEUDA</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/PRIMER TRIMESTRE/D.3.7-Intereses-de-la-Deuda.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">32</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.4.1 GASTO POR CATEGORÍA PROGRAMÁTICA</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/PRIMER TRIMESTRE/D.4.1-Gasto-por-Categoria-Programatica.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">33</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.4.2 INDICADORES DE RESULTADOS</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/PRIMER TRIMESTRE/D.4.2-Indicadores-de-Resultados.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">34</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.4.3 PROGRAMAS Y PROYECTOS DE INVERSIÓN</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/PRIMER TRIMESTRE/D.4.3-Programas-y-Proyectos-de-Inversion.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- SEGUNDO TRIMESTRE 2025 - CON TODOS LOS DOCUMENTOS QUE YA TENÍAS -->
+                        <div class="quarter-item">
+                            <div class="quarter-header" data-quarter="q2-2025">
+                                <h3><i class="fas fa-folder-open"></i> SEGUNDO TRIMESTRE</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="quarter-content" id="q2-2025">
+                                <div class="documents">
+                                    <div class="document-list">
+                                        <div class="document-item">
+                                            <div class="document-number">1</div>
+                                            <div class="document-info">
+                                                <div class="document-title">C.2.7 Coadyuvar con la fiscalización de las cuentas públicas</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/SEGUNDO TRIMESTRE/C.2.7-Coadyuvar-con-la-fiscalizacion-de-las-cuentas-publicas.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">2</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.1.11 Información de los montos efectivamente pagados durante el periodo por concepto de ayudas y subsidios</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/SEGUNDO TRIMESTRE/D.1.11-Informacion-de-los-montos-efectivamente-pagados-durante-el-periodo-por-concepto-de-ayudas-y-subsidios.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">3</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.1.12 Información de los montos plenamente identificados por orden de gobierno, de los programas en que concurran recursos federales</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/SEGUNDO TRIMESTRE/D.1.12-Informacion-de-los-montos-plenamente-identificados-por-orden-de-gobierno-de-los-programas-en-que-concurran-recursos-federales.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">4</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.1.15 Información trimestral sobre la aplicación de los recursos federales para el Fondo de Aportaciones para la Infraestructura Social (FAIS)</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/SEGUNDO TRIMESTRE/D.1.15-Informacion-trimestral-sobre-la-aplicacion-de-los-recursos-federales-para-el-Fondo-de-Aportaciones-para-la-Infraestructura-Social-FAIS.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">5</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.1.17 Información de aplicación de recursos federales del Fondo de Aportaciones para el Fortalecimiento de los Municipios y Demarcaciones Territoriales</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/SEGUNDO TRIMESTRE/D.1.17-Informacion-de-aplicacion-de-recursos-federales-del-Fondo-de-Aportaciones-para-el-Fortalecimiento-de-los-Municipios-y-Demarcaciones-Territoriales-del.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">6</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.1.19 Información relativa a las obligaciones que se pagan o garantizan con recursos de fondos federales</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/SEGUNDO TRIMESTRE/D.1.19-Informacion-relativa-a-las-obligaciones-que-se-pagan-o-garantizan-con-recursos-de-fondos-federales.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">7</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.1.20 Información trimestral del ejercicio y destino de gasto federalizado y reintegros</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/SEGUNDO TRIMESTRE/D.1.20-Informacion-trimestral-del-ejercicio-y-destino-de-gasto-federalizado-y-reintegros.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">8</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.2.1 Estado de Actividades</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/SEGUNDO TRIMESTRE/D.2.1-Estado-de-Actividades.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">9</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.2.2 Estado de Situación Financiera</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/SEGUNDO TRIMESTRE/D.2.2-Estado-de-Situacion-Financiera.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">10</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.2.3 Estado de Variación en la Hacienda Pública</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/SEGUNDO TRIMESTRE/D.2.3-Estado-de-Variacion-en-la-Hacienda-Publica.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">11</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.2.4 Estado de Cambios en la Situación Financiera</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/SEGUNDO TRIMESTRE/D.2.4-Estado-de-Cambios-en-la-Situacion-Financiera.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">12</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.2.5 Estado de Flujos de Efectivo</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/SEGUNDO TRIMESTRE/D.2.5-Estado-de-Flujos-de-Efectivo.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">13</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.2.6 Informe sobre Pasivos Contingentes</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/SEGUNDO TRIMESTRE/D.2.6-Informe-sobre-Pasivos-Contingentes.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">14</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.2.7 Notas a los Estados Financieros</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/SEGUNDO TRIMESTRE/D.2.7-Notas-a-los-Estados-Financieros.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">15</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.2.8 Estado Analítico del Activo</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/SEGUNDO TRIMESTRE/D.2.8-Estado-Analitico-del-Activo.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">16</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.2.9 Estado Analítico de la Deuda y Otros Pasivos</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/SEGUNDO TRIMESTRE/D.2.9-Estado-Analitico-de-la-Deuda-y-Otros-Pasivos.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">17</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.3.1 Estado Analítico de Ingresos</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/SEGUNDO TRIMESTRE/D.3.1-Estado-Analitico-de-Ingresos.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">18</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.3.2 Estado Analítico del Ejercicio del Presupuesto de Egresos con base en la Clasificación Administrativa</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/SEGUNDO TRIMESTRE/D.3.2-Estado-Analitico-del-Ejercicio-del-Presupuesto-de-Egresos-con-base-en-la-Clasificacion-Administrativa.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">19</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.3.3 Estado Analítico del Ejercicio del Presupuesto de Egresos con base en la Clasificación Económica</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/SEGUNDO TRIMESTRE/D.3.3-Estado-Analitico-del-Ejercicio-del-Presupuesto-de-Egresos-con-base-en-la-Clasificacion-Economica.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">20</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.3.4 Estado Analítico del Ejercicio del Presupuesto de Egresos con base en la Clasificación por Objeto del Gasto</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/SEGUNDO TRIMESTRE/D.3.4-Estado-Analitico-del-Ejercicio-del-Presupuesto-de-Egresos-con-base-en-la-Clasificacion-por-Objeto-del-Gasto.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">21</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.3.5 Estado Analítico del Ejercicio del Presupuesto de Egresos con base en la Clasificación Funcional</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/SEGUNDO TRIMESTRE/D.3.5-Estado-Analitico-del-Ejercicio-del-Presupuesto-de-Egresos-con-base-en-la-Clasificacion-Funcional.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">22</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.3.6 Endeudamiento Neto</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/SEGUNDO TRIMESTRE/D.3.6-Endeudamiento-Neto.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">23</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.3.7 Intereses de la Deuda</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/SEGUNDO TRIMESTRE/D.3.7-Intereses-de-la-Deuda.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">24</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.4.1 Gasto por Categoría Programática</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/SEGUNDO TRIMESTRE/D.4.1-Gasto-por-Categoria-Programatica.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">25</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.4.2 Indicadores de Resultados</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/SEGUNDO TRIMESTRE/D.4.2-Indicadores-de-Resultados.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">26</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.4.3 Programas y Proyectos de Inversión</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/SEGUNDO TRIMESTRE/D.4.3-Programas-y-Proyectos-de-Inversion.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="document-item">
+                                            <div class="document-number">27</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.5.4 Inventario de Bienes Muebles e Inmuebles actualizado</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/SEGUNDO TRIMESTRE/D.5.4.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- TERCER TRIMESTRE 2025 -->
+                        <div class="quarter-item">
+                            <div class="quarter-header" data-quarter="q3-2025">
+                                <h3><i class="fas fa-folder-open"></i> TERCER TRIMESTRE</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="quarter-content" id="q3-2025">
+                                <div class="documents">
+                                    <div class="document-list">
+                                        <div class="document-item">
+                                            <div class="document-number">1</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.1.10 Relación de las Cuentas Bancarias Productivas Específicas que se presentan en la Cuenta Pública Anual, en las cuales se depositan y ministran los recursos federales transferidos por cualquier concepto durante el ejercicio fiscal inmediato anterior</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/TERCER TRIMESTRE/D.1.10-Relacion-de-las-Cuentas-Bancarias-Productivas-Especificas-que-se-presentan-en-la-Cuenta.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">2</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.1.12 Información de los montos plenamente identificados por orden de gobierno, de los programas en que concurran recursos federales</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/TERCER TRIMESTRE/D.1.12-informacion-de-los-montos-plenamente-identificados-por-orden-de-gobierno-de-los-progra.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">3</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.1.15 Información trimestral sobre la aplicación de los recursos federales para el Fondo de Aportaciones para la Infraestructura Social (FAIS) (Artículo 33, apartado B, fracción II, inciso a) y c) de la LCF)</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/TERCER TRIMESTRE/D.1.15-informacion-trimestral-sobre-la-aplicacion-de-los-recursos-federales-para-el-Fondo-de-A.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">4</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.1.17 Información de aplicación de recursos federales del Fondo de Aportaciones para el Fortalecimiento de los Municipios y Demarcaciones Territoriales del Distrito Federal (FORTAMUN)</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/TERCER TRIMESTRE/D.1.17-informacion-de-aplicacion-de-recursos-federales-del-Fondo-de-Aportaciones-para-el-Forta.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">5</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.1.19 Información relativa a las obligaciones que se pagan o garantizan con recursos de fondos federales</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/TERCER TRIMESTRE/D.1.19-informacion-relativa-a-las-obligaciones-que-se-pagan-o-garantizan-con-recursos-de-fondo.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">6</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.1.20 Información trimestral del ejercicio y destino de gasto federalizado y reintegros</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/TERCER TRIMESTRE/D.1.20-informacion-trimestral-del-ejercicio-y-destino-de-gasto-federalizado-y-reintegros.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">7</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.1.21 Información anual del ejercicio y destino de gasto federalizado y reintegros</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/TERCER TRIMESTRE/D.1.21-informacion-anual-del-ejercicio-y-destino-de-gasto-federalizado-y-reintegros.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">8</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.2.1 Estado de Actividades</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/TERCER TRIMESTRE/D.2.1-Estado-de-Actividades.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">9</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.2.2 Estado de Situación Financiera</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/TERCER TRIMESTRE/D.2.2-Estado-de-Situacion-Financiera.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">10</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.2.3 Estado de Variación en la Hacienda Pública</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/TERCER TRIMESTRE/D.2.3-Estado-de-Variacion-en-la-Hacienda-Publica.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">11</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.2.4 Estado de Cambios en la Situación Financiera</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/TERCER TRIMESTRE/D.2.4-Estado-de-Cambios-en-la-Situacion-Financiera.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="document-item">
+                                            <div class="document-number">12</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.2.5 Estado de Flujos de Efectivo</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/TERCER TRIMESTRE/D.2.5-Estado-de-Flujos-de-Efectivo.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">13</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.2.6 Informe sobre Pasivos Contingentes</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/TERCER TRIMESTRE/D.2.6-Informe-sobre-Pasivos-Contingentes.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">14</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.2.7 Notas a los Estados Financieros</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/TERCER TRIMESTRE/D.2.7-Notas-a-los-Estados-Financieros.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">15</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.2.8 Estado Analítico del Activo</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/TERCER TRIMESTRE/D.2.8-Estado-Analitico-del-Activo.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">16</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.2.9 Estado Analítico de la Deuda y Otros Pasivos</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/TERCER TRIMESTRE/D.2.9-Estado-Analitico-de-la-Deuda-y-Otros-Pasivos.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">17</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.3.1 Estado Analítico de Ingresos</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/TERCER TRIMESTRE/D.3.1-Estado-Analitico-de-Ingresos.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">18</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.3.2 Estado Analítico del Ejercicio del Presupuesto de Egresos con base en la Clasificación Administrativa</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/TERCER TRIMESTRE/D.3.2-Estado-Analitico-del-Ejercicio-del-Presupuesto-de-Egresos-con-base-en-la-Clasificacion-A.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">19</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.3.3 Estado Analítico del Ejercicio del Presupuesto de Egresos con base en la Clasificación Económica (por Tipo de Gasto)</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/TERCER TRIMESTRE/D.3.3-Estado-Analitico-del-Ejercicio-del-Presupuesto-de-Egresos-con-base-en-la-Clasificacion-E.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">20</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.3.4 Estado Analítico del Ejercicio del Presupuesto de Egresos con base en la Clasificación por Objeto del Gasto</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/TERCER TRIMESTRE/D.3.4-Estado-Analitico-del-Ejercicio-del-Presupuesto-de-Egresos-con-base-en-la-Clasificacion-p.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">21</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.3.6 Endeudamiento Neto</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/TERCER TRIMESTRE/D.3.6-Endeudamiento-Neto.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">22</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.3.7 Intereses de la Deuda</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/TERCER TRIMESTRE/D.3.7-Intereses-de-la-Deuda.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="document-item">
+                                            <div class="document-number">23</div>
+                                            <div class="document-info">
+                                                <div class="document-title">E.8.2.9 Gasto por Categoría Programática</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/TERCER TRIMESTRE/E.8.2.9-Gasto-por-Categoría-Programática.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">24</div>
+                                            <div class="document-info">
+                                                <div class="document-title">E.8.2.10 Programas y Proyectos de Inversión</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/TERCER TRIMESTRE/E.8.2.10-Programas-y-Proyectos-de-Inversión.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">25</div>
+                                            <div class="document-info">
+                                                <div class="document-title">E.8.2.11 Indicadores de Resultados</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/TERCER TRIMESTRE/E.8.2.11-Indicadores-de-Resultados.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">26</div>
+                                            <div class="document-info">
+                                                <div class="document-title">E.8.3.1 Relación de Bienes Muebles</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/TERCER TRIMESTRE/E.8.3.1-Relación-de-Bienes-Muebles.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">27</div>
+                                            <div class="document-info">
+                                                <div class="document-title">E.8.3.2 Relación de Bienes Inmuebles</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/TERCER TRIMESTRE/E.8.3.2-Relación-de-Bienes-Inmuebles.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">28</div>
+                                            <div class="document-info">
+                                                <div class="document-title">E.8.3.3 Relación de Cuentas Bancarias Productivas específicas del Municipio</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/TERCER TRIMESTRE/E.8.3.3-Relación-de-Cuentas-Bancarias-Productivas-específicas-del-Municipio.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="document-item">
+                                            <div class="document-number">29</div>
+                                            <div class="document-info">
+                                                <div class="document-title">ENTREGA DE CUENTA PUBLICA 2025</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/TERCER TRIMESTRE/ENTREGA-DE-CUENTA-PUBLICA-2024.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- CUARTO TRIMESTRE 2025 -->
+                        <div class="quarter-item">
+                            <div class="quarter-header" data-quarter="q4-2025">
+                                <h3><i class="fas fa-folder-open"></i> CUARTO TRIMESTRE</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="quarter-content" id="q4-2025">
+                                <div class="documents">
+                                    <div class="document-list">
+                                        <div class="document-item">
+                                            <div class="document-number">1</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.1.12 información de los montos plenamente identificados por orden de gobierno</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/CUARTO TRIMESTRE/D.1.12 información de los montos plenamente identificados por orden de gobierno, de los programas en que concurran recursos federales.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="document-item">
+                                            <div class="document-number">2</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.1.17 información de aplicación de recursos federales </div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/CUARTO TRIMESTRE/D.1.17 información de aplicación de recursos federales del Fondo de Aportaciones para el FORTAMUN.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="document-item">
+                                            <div class="document-number">3</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.1.19 información relativa a las obligaciones que se pagan</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/CUARTO TRIMESTRE/D.1.19 información relativa a las obligaciones que se pagan o garantizan con recursos de fondos federales.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="document-item">
+                                            <div class="document-number">4</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.1.20 información trimestral del ejercicio y destino de gasto federalizado</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/CUARTO TRIMESTRE/D.1.20 información trimestral del ejercicio y destino de gasto federalizado y reintegros.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="document-item">
+                                            <div class="document-number">5</div>
+                                            <div class="document-info">
+                                                <div class="document-title">D.5.4 Inventario de Bienes Muebles e Inmuebles</div>
+                                                <div class="document-actions">
+                                                    <a href="sevac/2025/CUARTO TRIMESTRE/D.5.4 Inventario de Bienes Muebles e Inmuebles actualizado.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Año 2026 - COMPLETO CON LOS 4 TRIMESTRES -->
+            <div class="year-item fade-in">
+                <div class="year-header" data-year="2026">
+                    <h2><i class="fas fa-folder"></i> 2026</h2>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="year-content" id="year-2026">
+                    <div class="quarter-accordion">
+                        <!-- PRIMER TRIMESTRE 2026 -->
+                        <div class="quarter-item">
+                            <div class="quarter-header" data-quarter="q1-2026">
+                                <h3><i class="fas fa-folder-open"></i> PRIMER TRIMESTRE</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="quarter-content" id="q1-2026">
+                                <div class="documents">
+                                    <div class="document-list">
+                                        <div class="document-item" style="grid-column: 1 / -1; text-align: center; background: none; border-left: none;">
+                                            <p style="padding: 30px; color: #666;">Próximamente disponibles los documentos del primer trimestre 2026</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- SEGUNDO TRIMESTRE 2026 -->
+                        <div class="quarter-item">
+                            <div class="quarter-header" data-quarter="q2-2026">
+                                <h3><i class="fas fa-folder-open"></i> SEGUNDO TRIMESTRE</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="quarter-content" id="q2-2026">
+                                <div class="documents">
+                                    <div class="document-list">
+                                        <div class="document-item" style="grid-column: 1 / -1; text-align: center; background: none; border-left: none;">
+                                            <p style="padding: 30px; color: #666;">Próximamente disponibles los documentos del segundo trimestre 2026</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- TERCER TRIMESTRE 2026 -->
+                        <div class="quarter-item">
+                            <div class="quarter-header" data-quarter="q3-2026">
+                                <h3><i class="fas fa-folder-open"></i> TERCER TRIMESTRE</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="quarter-content" id="q3-2026">
+                                <div class="documents">
+                                    <div class="document-list">
+                                        <div class="document-item" style="grid-column: 1 / -1; text-align: center; background: none; border-left: none;">
+                                            <p style="padding: 30px; color: #666;">Próximamente disponibles los documentos del tercer trimestre 2026</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- CUARTO TRIMESTRE 2026 -->
+                        <div class="quarter-item">
+                            <div class="quarter-header" data-quarter="q4-2026">
+                                <h3><i class="fas fa-folder-open"></i> CUARTO TRIMESTRE</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="quarter-content" id="q4-2026">
+                                <div class="documents">
+                                    <div class="document-list">
+                                        <div class="document-item" style="grid-column: 1 / -1; text-align: center; background: none; border-left: none;">
+                                            <p style="padding: 30px; color: #666;">Próximamente disponibles los documentos del cuarto trimestre 2026</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Año 2027 -->
+            <div class="year-item fade-in">
+                <div class="year-header" data-year="2027">
+                    <h2><i class="fas fa-folder"></i> 2027</h2>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="year-content" id="year-2027">
+                    <div class="quarter-accordion">
+                        <div class="quarter-item">
+                            <div class="quarter-header" data-quarter="q1-2027">
+                                <h3><i class="fas fa-folder-open"></i> PRIMER TRIMESTRE</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="quarter-content" id="q1-2027">
+                                <div class="documents">
+                                    <div class="document-list">
+                                        <div class="document-item" style="grid-column: 1 / -1; text-align: center; background: none; border-left: none;">
+                                            <p style="padding: 30px; color: #666;">Próximamente disponibles los documentos del primer trimestre 2027</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SRFT 2025 -->
+        <!-- SRFT 2025 - SECCIÓN COMPLETA CON 4 TRIMESTRES -->
+<div class="section-title">
+    <h2>SRFT 2025</h2>
+</div>
+
+<div class="year-accordion">
+    <div class="year-item fade-in">
+        <div class="year-header" data-year="srft-2025">
+            <h2><i class="fas fa-chart-line"></i> SISTEMA DE RECURSOS FEDERALES TRANSFERIDOS 2025</h2>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="year-content" id="year-srft-2025">
+            <div class="quarter-accordion">
+                <!-- PRIMER TRIMESTRE -->
+                <div class="quarter-item">
+                    <div class="quarter-header" data-quarter="srft-q1-2025">
+                        <h3><i class="fas fa-folder-open"></i> PRIMER TRIMESTRE</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="quarter-content" id="srft-q1-2025">
+                        <div class="documents">
+                            <div class="document-list">
+                                <div class="document-item">
+                                    <div class="document-number">1</div>
+                                    <div class="document-info">
+                                        <div class="document-title">SRFT Primer Trimestre 2025</div>
+                                        <div class="document-desc">Informe completo del Sistema de Recursos Federales Transferidos - Primer Trimestre 2025</div>
+                                        <div class="document-actions">
+                                            <a href="https://terrenatetlaxcala.gob.mx/wp-content/uploads/2025/05/PRIMER-TRIMESTRE-2025.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- SEGUNDO TRIMESTRE -->
+                <div class="quarter-item">
+                    <div class="quarter-header" data-quarter="srft-q2-2025">
+                        <h3><i class="fas fa-folder-open"></i> SEGUNDO TRIMESTRE</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="quarter-content" id="srft-q2-2025">
+                        <div class="documents">
+                            <div class="document-list">
+                                <div class="document-item">
+                                    <div class="document-number">1</div>
+                                    <div class="document-info">
+                                        <div class="document-title">SRFT Segundo Trimestre 2025</div>
+                                        <div class="document-desc">Informe completo del Sistema de Recursos Federales Transferidos - Segundo Trimestre 2025</div>
+                                        <div class="document-actions">
+                                            <a href="sevac/SRFT 2025/PRIMER TRIMESTRE/PRIMER-TRIMESTRE-2025.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- TERCER TRIMESTRE -->
+                <div class="quarter-item">
+                    <div class="quarter-header" data-quarter="srft-q3-2025">
+                        <h3><i class="fas fa-folder-open"></i> TERCER TRIMESTRE</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="quarter-content" id="srft-q3-2025">
+                        <div class="documents">
+                            <div class="document-list">
+                                <div class="document-item">
+                                    <div class="document-number">1</div>
+                                    <div class="document-info">
+                                        <div class="document-title">SRFT Tercer Trimestre 2025</div>
+                                        <div class="document-desc">Informe completo del Sistema de Recursos Federales Transferidos - Tercer Trimestre 2025</div>
+                                        <div class="document-actions">
+                                            <a href="https://terrenatetlaxcala.gob.mx/wp-content/uploads/2025/05/PRIMER-TRIMESTRE-2025.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CUARTO TRIMESTRE -->
+                <div class="quarter-item">
+                    <div class="quarter-header" data-quarter="srft-q4-2025">
+                        <h3><i class="fas fa-folder-open"></i> CUARTO TRIMESTRE</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="quarter-content" id="srft-q4-2025">
+                        <div class="documents">
+                            <div class="document-list">
+                                <div class="document-item">
+                                    <div class="document-number">1</div>
+                                    <div class="document-info">
+                                        <div class="document-title">SRFT Cuarto Trimestre 2025</div>
+                                        <div class="document-desc">Informe completo del Sistema de Recursos Federales Transferidos - Cuarto Trimestre 2025</div>
+                                        <div class="document-actions">
+                                            <a href="sevac/SRFT 2025/CUARTO TRIMESTRE/SRFT.pdf" class="document-link" target="_blank">Descargar PDF</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        
+        <!-- Ayudas Sociales 2024 -->
+        <div class="section-title">
+            <h2>AYUDAS SOCIALES 2024</h2>
+        </div>
+        
+        <div class="year-accordion">
+            <div class="year-item fade-in">
+                <div class="year-header" data-year="ayudas-2024">
+                    <h2><i class="fas fa-hands-helping"></i> PROGRAMA DE APOYOS Y ASISTENCIA SOCIAL 2024</h2>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="year-content" id="year-ayudas-2024">
+                    <div class="quarter-accordion">
+                        <!-- Agrega meses según sea necesario -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-logo">
+                <div class="footer-logo-img">
+                    <img src="img/cropped-Logo-Terrenate-2024-2027-150x150.png" alt="Logo Terrenate">
+                </div>
+                <div class="footer-text">
+                    <h3>Municipio de Terrenate, Tlaxcala</h3>
+                    <p>2024-2027 · Gobierno Municipal</p>
+                    <p>Comprometidos con la transparencia y el desarrollo de nuestra comunidad</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2024-2027 Ayuntamiento de Terrenate, Tlaxcala. Todos los Derechos Reservados.</p>
+                <p>Esta página forma parte del Sistema Estatal de Vinculación y Actualización Contable (SEVAC)</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Archivo JavaScript externo -->
+    <script src="script.js"></script>
+</body>
+</html>

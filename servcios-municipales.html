@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SERVICIOS MUNICIPALES – TERRENATE</title>
+    <link rel="icon" href="img/cropped-Logo-Terrenate-2024-2027-150x150.png" sizes="32x32">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Estilos personalizados (deben estar en la misma carpeta) -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Ajuste para la imagen única de servicios municipales */
+        .single-image-container {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+        }
+        .single-image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--gray-medium);
+        }
+        .single-image-container img:hover {
+            transform: scale(1.02);
+            box-shadow: var(--shadow-hover);
+        }
+        .section-subtitle {
+            text-align: center;
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header personalizado -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-img">
+                        <img src="img/cropped-Logo-Terrenate-2024-2027-150x150.png" alt="Logo Terrenate">
+                    </div>
+                    <div class="logo-text">
+                        <h1>TERRENATE</h1>
+                        <p>Municipio de Terrenate, Tlaxcala</p>
+                    </div>
+                </div>
+
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <div class="nav-overlay" id="navOverlay"></div>
+
+                <nav class="nav-menu" id="navMenu">
+                    <ul>
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">
+                                <i class="fas fa-home"></i>
+                                <span>INICIO</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item has-dropdown">
+                            <a href="nuestro-municipio.html" class="nav-link">
+                                <i class="fas fa-users"></i>
+                                <span>NUESTRO MUNICIPIO</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown">
+                                <li><a href="marco-juridico.html" class="dropdown-item">
+                                    <i class="fas fa-file-alt"></i>
+                                    <span>MARCO JURÍDICO</span>
+                                </a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item has-dropdown">
+                            <a href="transparencia.html" class="nav-link">
+                                <i class="fas fa-search"></i>
+                                <span>TRANSPARENCIA</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown">
+                                <li><a href="avisos-de-privacidad.html" class="dropdown-item">
+                                    <i class="fas fa-file-alt"></i>
+                                    <span>AVISOS DE PRIVACIDAD</span>
+                                </a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="sevac.html" class="nav-link">
+                                <i class="fas fa-chart-bar"></i>
+                                <span>SEVAC</span>
+                            </a>
+                        </li>
+
+                        <!-- TRÁMITES Y SERVICIOS activo -->
+                        <li class="nav-item has-dropdown">
+                            <a href="tramites-servicios.html" class="nav-link active">
+                                <i class="fas fa-file-signature"></i>
+                                <span>TRÁMITES Y SERVICIOS</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown">
+                                <li><a href="tesoreria.html" class="dropdown-item">
+                                    <i class="fas fa-money-bill"></i>
+                                    <span>TESORERÍA</span>
+                                </a></li>
+                                <li><a href="obras-publicas.html" class="dropdown-item">
+                                    <i class="fas fa-hammer"></i>
+                                    <span>OBRAS PÚBLICAS</span>
+                                </a></li>
+                                <li><a href="registro-civil.html" class="dropdown-item">
+                                    <i class="fas fa-id-card"></i>
+                                    <span>REGISTRO CIVIL</span>
+                                </a></li>
+                                <li><a href="secretaria.html" class="dropdown-item">
+                                    <i class="fas fa-user-tie"></i>
+                                    <span>SECRETARÍA DEL AYUNTAMIENTO</span>
+                                </a></li>
+                                <li><a href="dif.html" class="dropdown-item">
+                                    <i class="fas fa-comments"></i>
+                                    <span>DIF</span>
+                                </a></li>
+                                <!-- Ítem activo: DESARROLLO ECONÓMICO -->
+                                <li><a href="desarrollo-economico.html" class="dropdown-item active">
+                                    <i class="fas fa-chart-area"></i>
+                                    <span>DESARROLLO ECONÓMICO</span>
+                                </a></li>
+                                <li><a href="seguridad-publica.html" class="dropdown-item">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>SEGURIDAD PÚBLICA</span>
+                                </a></li>
+                                <li><a href="servcios-municipales.html" class="dropdown-item">
+                                    <i class="fas fa-tools"></i>
+                                    <span>SERVICIOS MUNICIPALES</span>
+                                </a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="main-container">
+        <div class="container">
+            <div class="section-title">
+                <h2>SERVICIOS MUNICIPALES</h2>
+            </div>
+            <p class="section-subtitle">Trámites y servicios para la comunidad</p>
+
+            <!-- Imagen única (como en el original) -->
+            <div class="single-image-container">
+                <img src="img/Servicios-municipales_page-0001.jpg" alt="Servicios Municipales Terrenate">
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (mismo que en páginas anteriores) -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-logo">
+                <div class="footer-logo-img">
+                    <img src="img/cropped-Logo-Terrenate-2024-2027-150x150.png" alt="Logo Terrenate">
+                </div>
+                <div class="footer-text">
+                    <h3>Municipio de Terrenate, Tlaxcala</h3>
+                    <p>2024-2027 · Gobierno Municipal</p>
+                    <p>Comprometidos con la transparencia y el desarrollo de nuestra comunidad</p>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>© 2024-2027 Ayuntamiento de Terrenate, Tlaxcala. Todos los Derechos Reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script principal (debe estar en la misma carpeta) -->
+    <script src="script.js"></script>
+</body>
+</html>

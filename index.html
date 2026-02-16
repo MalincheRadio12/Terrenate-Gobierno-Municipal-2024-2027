@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terrenate · Gobierno Municipal 2024-2027</title>
+    <!-- Fuentes y Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <!-- Favicon -->
+    <link rel="icon" href="img/cropped-Logo-Terrenate-2024-2027-150x150.png">
+    <!-- CSS base (si tienes un archivo externo, lo puedes enlazar aquí; si no, los estilos base ya están incluidos en el siguiente bloque) -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Estilos adicionales específicos de la página (incluye mejoras y componentes) -->
+    <style>
+        /* ===== VARIABLES ADICIONALES ===== */
+        :root {
+            --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            --gradient-accent: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-hover) 100%);
+            --border-radius-xl: 20px;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            position: relative;
+            height: 90vh;
+            min-height: 600px;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 0.8s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+            z-index: 2;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(0,15,43,0.85) 0%, rgba(0,15,43,0.6) 50%, rgba(0,15,43,0.4) 100%);
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            color: white;
+            max-width: 700px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--accent-color);
+            color: var(--secondary-color);
+            font-weight: 600;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--secondary-color);
+            border-color: white;
+        }
+
+        /* Ocultar botones de navegación en todos los dispositivos */
+        .hero-nav {
+            display: none;
+        }
+
+        .hero-dots {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            background: rgba(255,255,255,0.5);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .dot.active {
+            background: var(--accent-color);
+            transform: scale(1.2);
+        }
+
+        /* ===== SECCIONES ===== */
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .bg-light {
+            background-color: #f8fafc;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-subtitle {
+            display: inline-block;
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .section-divider {
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-accent);
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+
+        /* ===== GALERÍA ===== */
+        .gallery-carousel {
+            margin-top: 30px;
+        }
+
+        .gallery-swiper {
+            width: 100%;
+            padding-bottom: 50px;
+        }
+
+        .gallery-card {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            aspect-ratio: 16/9;
+        }
+
+        .gallery-card:hover {
+            transform: scale(1.02);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+
+        .gallery-card:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        /* ===== TARJETAS PARA FACEBOOK Y MAPA ===== */
+        .split-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+            height: 100%;
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-hover);
+        }
+
+        .card-header {
+            padding: 20px;
+            background: var(--gradient-primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card-header i {
+            font-size: 1.8rem;
+        }
+
+        .card-header h3 {
+            margin: 0;
+            color: white;
+            font-size: 1.3rem;
+        }
+
+        .card-body {
+            padding: 0;
+            flex: 1;
+            background: #f0f2f5;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Estilo para el contenedor de Facebook - altura reducida */
+        .fb-page-container {
+            width: 100%;
+            min-height: 600px; /* Reducido de 1425px a 600px */
+            background: #ffffff;
+            overflow: hidden;
+        }
+
+        /* Asegurar que el plugin ocupe todo el ancho */
+        .fb-page,
+        .fb-page iframe,
+        .fb-page span {
+            width: 100% !important;
+        }
+
+        /* Ajustar altura del mapa */
+        .map-container {
+            width: 100%;
+            height: 100%;
+            min-height: 450px;
+        }
+
+        .map-container iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            min-height: 450px;
+            border: 0;
+        }
+
+        .card-footer {
+            padding: 15px 20px;
+            background: #f8fafc;
+            border-top: 1px solid var(--gray-medium);
+        }
+
+        .h-100 {
+            height: 100%;
+        }
+
+        .btn-facebook {
+            background: #4267B2;
+            color: white;
+            border: none;
+        }
+
+        .btn-facebook:hover {
+            background: #365899;
+        }
+
+        /* ===== TURISMO ===== */
+        .tourism-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            background: white;
+            border-radius: var(--border-radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .tourism-content {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .tourism-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .tourism-features {
+            margin: 20px 0;
+            list-style: none;
+        }
+
+        .tourism-features li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tourism-features i {
+            color: var(--primary-color);
+        }
+
+        .tourism-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ===== TRANSPARENCIA ===== */
+        .transparency-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .transparency-item {
+            text-align: center;
+        }
+
+        .transparency-card {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            margin-bottom: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        .transparency-card img {
+            width: 100%;
+            transition: var(--transition);
+        }
+
+        .transparency-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .transparency-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,15,43,0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .transparency-card:hover .transparency-overlay {
+            opacity: 1;
+        }
+
+        .transparency-caption {
+            font-size: 0.95rem;
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+
+        .transparency-card {
+            aspect-ratio: 4 / 5;
+        }
+
+        .transparency-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        
+        
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .split-grid {
+                grid-template-columns: 1fr;
+            }
+            .tourism-card {
+                grid-template-columns: 1fr;
+            }
+            .tourism-content {
+                padding: 30px;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .fb-page-container {
+                min-height: 500px; /* Aún más pequeño en móvil */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: 50px 0;
+            }
+            .hero {
+                height: 70vh;
+            }
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .hero-buttons {
+                flex-direction: column;
+            }
+            .map-container {
+                min-height: 350px;
+            }
+            .map-container iframe {
+                min-height: 350px;
+            }
+            .fb-page-container {
+                min-height: 450px;
+            }
+        }
+
+        /* ===== ANIMACIONES ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-img">
+                        <img src="img/cropped-Logo-Terrenate-2024-2027-150x150.png" alt="Logo Terrenate">
+                    </div>
+                    <div class="logo-text">
+                        <h1>TERRENATE</h1>
+                        <p>Municipio de Terrenate, Tlaxcala</p>
+                    </div>
+                </div>
+                
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <div class="nav-overlay" id="navOverlay"></div> <!-- MOVER AQUÍ -->
+                
+                <nav class="nav-menu" id="navMenu">
+                    <ul>
+                
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">
+                                <i class="fas fa-home"></i>
+                                <span>INICIO</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item has-dropdown">
+                            <a href="nuestro-municipio.html" class="nav-link">
+                                <i class="fas fa-users"></i>
+                                <span>NUESTRO MUNICIPIO</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown">
+                                <li><a href="marco-juridico.html" class="dropdown-item">
+                                    <i class="fas fa-file-alt"></i>
+                                    <span>MARCO JURÍDICO</span>
+                                </a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item has-dropdown">
+                            <a href="transparencia.html" class="nav-link">
+                                <i class="fas fa-search"></i>
+                                <span>TRANSPARENCIA</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown">
+                                <li><a href="avisos-de-privacidad.html" class="dropdown-item">
+                                    <i class="fas fa-file-alt"></i>
+                                    <span>AVISOS DE PRIVACIDAD</span>
+                                </a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="sevac.html" class="nav-link">
+                                <i class="fas fa-chart-bar"></i>
+                                <span>SEVAC</span>
+                            </a>
+                        </li>
+
+                        <!-- TRÁMITES Y SERVICIOS activo -->
+                        <li class="nav-item has-dropdown">
+                            <a href="tramites-servicios.html" class="nav-link active">
+                                <i class="fas fa-file-signature"></i>
+                                <span>TRÁMITES Y SERVICIOS</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown">
+                                <li><a href="tesoreria.html" class="dropdown-item">
+                                    <i class="fas fa-money-bill"></i>
+                                    <span>TESORERÍA</span>
+                                </a></li>
+                                <li><a href="obras-publicas.html" class="dropdown-item">
+                                    <i class="fas fa-hammer"></i>
+                                    <span>OBRAS PÚBLICAS</span>
+                                </a></li>
+                                <li><a href="registro-civil.html" class="dropdown-item">
+                                    <i class="fas fa-id-card"></i>
+                                    <span>REGISTRO CIVIL</span>
+                                </a></li>
+                                <li><a href="secretaria.html" class="dropdown-item">
+                                    <i class="fas fa-user-tie"></i>
+                                    <span>SECRETARÍA DEL AYUNTAMIENTO</span>
+                                </a></li>
+                                <li><a href="dif.html" class="dropdown-item">
+                                    <i class="fas fa-comments"></i>
+                                    <span>DIF</span>
+                                </a></li>
+                                <!-- Ítem activo: DESARROLLO ECONÓMICO -->
+                                <li><a href="desarrollo-economico.html" class="dropdown-item active">
+                                    <i class="fas fa-chart-area"></i>
+                                    <span>DESARROLLO ECONÓMICO</span>
+                                </a></li>
+                                <li><a href="seguridad-publica.html" class="dropdown-item">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>SEGURIDAD PÚBLICA</span>
+                                </a></li>
+                                <li><a href="servcios-municipales.html" class="dropdown-item">
+                                    <i class="fas fa-tools"></i>
+                                    <span>SERVICIOS MUNICIPALES</span>
+                                </a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== HERO / CARRUSEL PRINCIPAL ===== -->
+    <section class="hero">
+        <div class="hero-carousel">
+            <div class="hero-slide active" style="background-image: url('img/inicio1.jpg');">
+                <div class="hero-overlay">
+                    <div class="container">
+                        <div class="hero-content">
+                            <span class="hero-badge">Gobierno Municipal 2024-2027</span>
+                            <h1>Bienvenidos a Terrenate</h1>
+                            <p>Un encantador pueblo en el corazón de Tlaxcala, donde la tranquilidad y la belleza natural se entrelazan.</p>
+                            <div class="hero-buttons">
+                                <a href="#turismo" class="btn btn-primary">Descubre Turismo</a>
+                                <a href="#transparencia" class="btn btn-outline">Transparencia</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slide" style="background-image: url('img/inicio4.jpg');">
+                <div class="hero-overlay">
+                    <div class="container">
+                        <div class="hero-content">
+                            <span class="hero-badge">Tradición y cultura</span>
+                            <h1>Nuestras raíces</h1>
+                            <p>Celebramos nuestras costumbres con orgullo y alegría.</p>
+                            <div class="hero-buttons">
+                                <a href="#turismo" class="btn btn-primary">Conoce más</a>
+                                <a href="#transparencia" class="btn btn-outline">Transparencia</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slide" style="background-image: url('img/Galeria11.jpeg');">
+                <div class="hero-overlay">
+                    <div class="container">
+                        <div class="hero-content">
+                            <span class="hero-badge">Naturaleza viva</span>
+                            <h1>Paisajes inolvidables</h1>
+                            <p>Explora senderos y miradores con vistas únicas.</p>
+                            <div class="hero-buttons">
+                                <a href="#turismo" class="btn btn-primary">Descubre</a>
+                                <a href="#transparencia" class="btn btn-outline">Transparencia</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Botones de navegación eliminados (se ocultan con CSS) -->
+        <div class="hero-dots"></div>
+    </section>
+
+    <!-- ===== SECCIÓN: GALERÍA DE NOTICIAS / INSTITUCIONAL ===== -->
+    <section class="gallery section-padding bg-light fade-in">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Actualidad</span>
+                <h2 class="section-title">Noticias y eventos</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="gallery-carousel">
+                <div class="swiper gallery-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="gallery-card">
+                                <img src="https://terrenatetlaxcala.gob.mx/wp-content/uploads/2025/03/PORTADA-4-1024x576.webp" alt="Noticia 1">
+                                <div class="gallery-overlay">
+                                    <span>Noticias</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="gallery-card">
+                                <img src="https://terrenatetlaxcala.gob.mx/wp-content/uploads/2025/03/PORTADA-3-1024x512.png" alt="Noticia 2">
+                                <div class="gallery-overlay">
+                                    <span>Noticias</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="gallery-card">
+                                <img src="https://terrenatetlaxcala.gob.mx/wp-content/uploads/2025/03/PORTADA-2-1024x512.png" alt="Noticia 3">
+                                <div class="gallery-overlay">
+                                    <span>Noticias</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="gallery-card">
+                                <img src="https://terrenatetlaxcala.gob.mx/wp-content/uploads/2025/03/PORTADA-1-1024x512.png" alt="Noticia 4">
+                                <div class="gallery-overlay">
+                                    <span>Noticias</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="gallery-card">
+                                <img src="https://terrenatetlaxcala.gob.mx/wp-content/uploads/2026/01/FB_IMG_1768931984390.jpg" alt="Noticia 5">
+                                <div class="gallery-overlay">
+                                    <span>Noticias</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="gallery-card">
+                                <img src="https://terrenatetlaxcala.gob.mx/wp-content/uploads/2026/01/FB_IMG_1768932214331.jpg" alt="Noticia 6">
+                                <div class="gallery-overlay">
+                                    <span>Noticias</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECCIÓN: FACEBOOK Y MAPA (dos columnas) ===== -->
+    <section class="social-location section-padding fade-in">
+        <div class="container">
+            <div class="split-grid">
+                <!-- Columna izquierda: Facebook (exactamente como el original pero con altura reducida) -->
+                <div class="split-col">
+                    <div class="card h-100">
+                        <div class="card-header">
+                            <i class="fab fa-facebook-square"></i>
+                            <h3>Gobierno Municipal de Terrenate</h3>
+                        </div>
+                        <div class="card-body">
+                            <div id="fb-root"></div>
+                            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v22.0"></script>
+                            <div class="fb-page-container">
+                                <div class="fb-page" 
+                                     data-href="https://www.facebook.com/profile.php?id=61565129642422&locale=es_LA" 
+                                     data-tabs="timeline, events, messages" 
+                                     data-width="500" 
+                                     data-height="600"  <!-- Reducido de 1425 a 600 -->
+                                     data-small-header="false" 
+                                     data-adapt-container-width="true" 
+                                     data-hide-cover="false" 
+                                     data-show-facepile="true">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://www.facebook.com/profile.php?id=61565129642422&locale=es_LA" target="_blank" class="btn btn-facebook">
+                                <i class="fab fa-facebook-f"></i> Visitar página
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Columna derecha: Mapa de ubicación -->
+                <div class="split-col">
+                    <div class="card h-100">
+                        <div class="card-header">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h3>Presidencia Municipal</h3>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="map-container">
+                                <iframe 
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3761.496067068921!2d-97.92192812570447!3d19.477282139254157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d0037190e83f7f%3A0x5a1bb33685b2e338!2sPresidencia%20Municipal!5e0!3m2!1ses!2smx!4v1742855616800!5m2!1ses!2smx" 
+                                    width="100%" 
+                                    height="450" 
+                                    style="border:0;" 
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade">
+                                </iframe>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <address>
+                                <i class="fas fa-location-dot"></i> Presidencia Municipal, Centro, Terrenate, Tlaxcala.
+                                <br>
+                                <i class="fas fa-phone"></i> 241 412 3456
+                            </address>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECCIÓN: TURISMO DESTACADO ===== -->
+    <section id="turismo" class="tourism section-padding fade-in">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Descubre</span>
+                <h2 class="section-title">Turismo en Terrenate</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="tourism-card">
+                <div class="tourism-content">
+                    <h3>Naturaleza, cultura y tradición</h3>
+                    <p>Explora senderos rodeados de flora y fauna típica, disfruta de vistas panorámicas de la sierra y los campos que se extienden hasta donde alcanza la vista. Vive la experiencia de un pueblo lleno de calidez.</p>
+                    <ul class="tourism-features">
+                        <li><i class="fas fa-check-circle"></i> Senderismo y ecoturismo</li>
+                        <li><i class="fas fa-check-circle"></i> Gastronomía tradicional</li>
+                        <li><i class="fas fa-check-circle"></i> Festividades locales</li>
+                        <li><i class="fas fa-check-circle"></i> Arquitectura colonial</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">Planifica tu visita</a>
+                </div>
+                <div class="tourism-image">
+                    <img src="img/parroquia.jpeg" alt="Turismo Terrenate">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECCIÓN: TRANSPARENCIA E INFOGRAFÍA ===== -->
+    <section id="transparencia" class="transparency section-padding bg-light fade-in">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Gobierno abierto</span>
+                <h2 class="section-title">Transparencia y rendición de cuentas</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="transparency-grid">
+                <div class="transparency-item">
+                    <div class="transparency-card">
+                        <img src="img/infografia_page-0001.jpg" alt="Infografía de Gestión 2024-2027" class="img-fluid rounded shadow">
+                        <div class="transparency-overlay">
+                            <a href="img/infografia_page-0001.jpg" target="_blank" class="btn btn-light">Ver completo</a>
+                        </div>
+                    </div>
+                    <p class="transparency-caption">Infografía de logros y avances 2024-2027</p>
+                </div>
+                <div class="transparency-item">
+                    <div class="transparency-card">
+                        <img src="img/IAIP-TLAXCALA-CONOCENOS.webp" alt="IAIP Tlaxcala" class="img-fluid rounded shadow">
+                        <div class="transparency-overlay">
+                            <a href="img/IAIP-TLAXCALA-CONOCENOS.webp" target="_blank" class="btn btn-light">Conoce IAIP</a>
+                        </div>
+                    </div>
+                    <p class="transparency-caption">Instituto de Acceso a la Información Pública</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-logo">
+                <div class="footer-logo-img">
+                    <img src="img/cropped-Logo-Terrenate-2024-2027-150x150.png" alt="Logo Terrenate">
+                </div>
+                <div class="footer-text">
+                    <h3>Municipio de Terrenate, Tlaxcala</h3>
+                    <p>2024-2027 · Gobierno Municipal</p>
+                    <p>Comprometidos con la transparencia y el desarrollo de nuestra comunidad</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2024-2027 Ayuntamiento de Terrenate, Tlaxcala. Todos los Derechos Reservados.</p>
+                <p>Esta página forma parte del Sistema Estatal de Vinculación y Actualización Contable (SEVAC)</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- JavaScript para funcionalidades (menú, hero, galería, animaciones) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            'use strict';
+
+            // ---------- HERO CARRUSEL (solo puntos, sin botones) ----------
+            const heroSlides = document.querySelectorAll('.hero-slide');
+            const dotsContainer = document.querySelector('.hero-dots');
+            let currentSlide = 0;
+            let autoSlideInterval;
+
+            if (heroSlides.length > 0) {
+                // Crear puntos
+                heroSlides.forEach((_, index) => {
+                    const dot = document.createElement('span');
+                    dot.classList.add('dot');
+                    dot.dataset.index = index;
+                    if (index === 0) dot.classList.add('active');
+                    dot.addEventListener('click', function() {
+                        goToSlide(parseInt(this.dataset.index));
+                        resetAutoSlide();
+                    });
+                    dotsContainer.appendChild(dot);
+                });
+
+                function goToSlide(n) {
+                    heroSlides.forEach(slide => slide.classList.remove('active'));
+                    document.querySelectorAll('.dot').forEach(dot => dot.classList.remove('active'));
+                    heroSlides[n].classList.add('active');
+                    document.querySelectorAll('.dot')[n].classList.add('active');
+                    currentSlide = n;
+                }
+
+                function nextSlide() {
+                    currentSlide = (currentSlide + 1) % heroSlides.length;
+                    goToSlide(currentSlide);
+                }
+
+                function resetAutoSlide() {
+                    clearInterval(autoSlideInterval);
+                    autoSlideInterval = setInterval(nextSlide, 5000);
+                }
+
+                // Iniciar auto-play
+                autoSlideInterval = setInterval(nextSlide, 5000);
+
+                // Soporte para deslizamiento táctil (opcional, pero Swiper no está en hero)
+                // Podríamos agregar detección de swipe, pero por ahora solo auto y puntos.
+            }
+
+            // ---------- GALERÍA CON SWIPER ----------
+            if (typeof Swiper !== 'undefined') {
+                new Swiper('.gallery-swiper', {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                    loop: true,
+                    autoplay: {
+                        delay: 4000,
+                        disableOnInteraction: false,
+                    },
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    breakpoints: {
+                        640: {
+                            slidesPerView: 2,
+                        },
+                        1024: {
+                            slidesPerView: 3,
+                        },
+                    },
+                });
+            }
+
+            // ---------- ANIMACIÓN AL HACER SCROLL (FADE IN) ----------
+            const fadeElements = document.querySelectorAll('.fade-in');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            fadeElements.forEach(el => observer.observe(el));
+
+            // ---------- ACTUALIZAR ENLACE ACTIVO EN EL MENÚ ----------
+            const currentLocation = window.location.href;
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                if (link.href === currentLocation) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

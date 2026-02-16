@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARCO JURÍDICO - TERRENATE</title>
+    <link rel="icon" href="img/cropped-Logo-Terrenate-2024-2027-150x150.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Estilos generales del sitio -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Estilos específicos para la página Marco Jurídico -->
+    <style>
+        /* ===== ESTILOS EXCLUSIVOS DE MARCO JURÍDICO ===== */
+        /* Estos estilos no están en styles.css y son necesarios para la cuadrícula de documentos */
+
+        .legal-documents {
+            margin-bottom: 50px;
+        }
+
+        .documents-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        .documents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .document-card {
+            background-color: var(--light-color);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow);
+            padding: 25px;
+            transition: var(--transition);
+            border-top: 5px solid var(--primary-color);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .document-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .document-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .document-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .document-description {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .document-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            padding: 10px 20px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: auto;
+        }
+
+        .document-link:hover {
+            background-color: var(--primary-dark);
+            gap: 12px;
+        }
+
+        /* Resaltado para la página actual en el menú desplegable */
+        .current-page {
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+
+        /* Ajustes responsive exclusivos para la cuadrícula */
+        @media (max-width: 992px) {
+            .documents-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .documents-grid {
+                grid-template-columns: 1fr;
+            }
+            .document-card {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .documents-intro {
+                font-size: 1rem;
+            }
+            .document-title {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header y Navegación -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-img">
+                        <img src="img/cropped-Logo-Terrenate-2024-2027-150x150.png" alt="Logo Terrenate">
+                    </div>
+                    <div class="logo-text">
+                        <h1>TERRENATE</h1>
+                        <p>Municipio de Terrenate, Tlaxcala</p>
+                    </div>
+                </div>
+                
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <div class="nav-overlay" id="navOverlay"></div>
+                
+                <nav class="nav-menu" id="navMenu">
+                    <ul>
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">
+                                <i class="fas fa-home"></i>
+                                <span>INICIO</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item has-dropdown">
+                            <a href="nuestro-municipio.html" class="nav-link">
+                                <i class="fas fa-users"></i>
+                                <span>NUESTRO MUNICIPIO</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown">
+                                <li><a href="marco-juridico.html" class="dropdown-item">
+                                    <i class="fas fa-file-alt"></i>
+                                    <span>MARCO JURÍDICO</span>
+                                </a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item has-dropdown">
+                            <a href="transparencia.html" class="nav-link">
+                                <i class="fas fa-search"></i>
+                                <span>TRANSPARENCIA</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown">
+                                <li><a href="avisos-de-privacidad.html" class="dropdown-item">
+                                    <i class="fas fa-file-alt"></i>
+                                    <span>AVISOS DE PRIVACIDAD</span>
+                                </a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="sevac.html" class="nav-link">
+                                <i class="fas fa-chart-bar"></i>
+                                <span>SEVAC</span>
+                            </a>
+                        </li>
+
+                        <!-- TRÁMITES Y SERVICIOS activo -->
+                        <li class="nav-item has-dropdown">
+                            <a href="tramites-servicios.html" class="nav-link active">
+                                <i class="fas fa-file-signature"></i>
+                                <span>TRÁMITES Y SERVICIOS</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown">
+                                <li><a href="tesoreria.html" class="dropdown-item">
+                                    <i class="fas fa-money-bill"></i>
+                                    <span>TESORERÍA</span>
+                                </a></li>
+                                <li><a href="obras-publicas.html" class="dropdown-item">
+                                    <i class="fas fa-hammer"></i>
+                                    <span>OBRAS PÚBLICAS</span>
+                                </a></li>
+                                <li><a href="registro-civil.html" class="dropdown-item">
+                                    <i class="fas fa-id-card"></i>
+                                    <span>REGISTRO CIVIL</span>
+                                </a></li>
+                                <li><a href="secretaria.html" class="dropdown-item">
+                                    <i class="fas fa-user-tie"></i>
+                                    <span>SECRETARÍA DEL AYUNTAMIENTO</span>
+                                </a></li>
+                                <li><a href="dif.html" class="dropdown-item">
+                                    <i class="fas fa-comments"></i>
+                                    <span>DIF</span>
+                                </a></li>
+                                <!-- Ítem activo: DESARROLLO ECONÓMICO -->
+                                <li><a href="desarrollo-economico.html" class="dropdown-item active">
+                                    <i class="fas fa-chart-area"></i>
+                                    <span>DESARROLLO ECONÓMICO</span>
+                                </a></li>
+                                <li><a href="seguridad-publica.html" class="dropdown-item">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>SEGURIDAD PÚBLICA</span>
+                                </a></li>
+                                <li><a href="servcios-municipales.html" class="dropdown-item">
+                                    <i class="fas fa-tools"></i>
+                                    <span>SERVICIOS MUNICIPALES</span>
+                                </a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner principal (estilos tomados de styles.css) -->
+    <section class="banner">
+        <div class="container">
+            <h1>Marco Jurídico Municipal</h1>
+            <p>Documentos legales fundamentales que regulan la administración pública del Municipio de Terrenate, Tlaxcala</p>
+        </div>
+    </section>
+
+    <!-- Contenido principal -->
+    <main class="main-container">
+        <div class="container">
+            <section class="legal-documents fade-in">
+                <div class="section-title">
+                    <h2>Documentos Legales</h2>
+                </div>
+                
+                <p class="documents-intro">
+                    El marco jurídico municipal constituye el conjunto de normas, leyes y reglamentos que establecen las bases para la organización, funcionamiento y administración del municipio. A continuación se presentan los principales documentos legales que regulan las actividades del Ayuntamiento de Terrenate.
+                </p>
+                
+                <div class="documents-grid">
+                    <!-- Documento 1 -->
+                    <div class="document-card">
+                        <div class="document-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <h3 class="document-title">Ley de Ingresos del Estado</h3>
+                        <p class="document-description">
+                            Establece los ingresos que percibirá el Estado durante el ejercicio fiscal, incluyendo aquellos que corresponden a los municipios conforme a la legislación aplicable.
+                        </p>
+                        <a href="MARCO JURÍDICO/LEY-INGRESOS-ESTATAL-2024.pdf" class="document-link" target="_blank">
+                            <span>Ver Documento</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                    
+                    <!-- Documento 2 -->
+                    <div class="document-card">
+                        <div class="document-icon">
+                            <i class="fas fa-file-contract"></i>
+                        </div>
+                        <h3 class="document-title">Ley de Adquisiciones Estatal</h3>
+                        <p class="document-description">
+                            Norma las contrataciones de obras públicas y la adquisición de bienes y servicios para la administración pública estatal y municipal.
+                        </p>
+                        <a href="MARCO JURÍDICO/LEY-DE-ADQUISICIONE-ESTATAL.pdf" class="document-link" target="_blank">
+                            <span>Ver Documento</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                    
+                    <!-- Documento 3 -->
+                    <div class="document-card">
+                        <div class="document-icon">
+                            <i class="fas fa-gavel"></i>
+                        </div>
+                        <h3 class="document-title">Reglamento de Adquisiciones</h3>
+                        <p class="document-description">
+                            Establece las disposiciones específicas para los procesos de contratación y adquisición de bienes y servicios en el ámbito municipal.
+                        </p>
+                        <a href="MARCO JURÍDICO/REGLAMENTO-LEY-ADQUISICIONES.pdf" class="document-link" target="_blank">
+                            <span>Ver Documento</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                    
+                    <!-- Documento 4 -->
+                    <div class="document-card">
+                        <div class="document-icon">
+                            <i class="fas fa-hard-hat"></i>
+                        </div>
+                        <h3 class="document-title">Ley de Obras Públicas</h3>
+                        <p class="document-description">
+                            Regula la planeación, contratación, ejecución, supervisión y conservación de las obras públicas que realiza el gobierno municipal.
+                        </p>
+                        <a href="MARCO JURÍDICO/LEY-OBRAS-PUBLICAS.pdf" class="document-link" target="_blank">
+                            <span>Ver Documento</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                    
+                    <!-- Documento 5 -->
+                    <div class="document-card">
+                        <div class="document-icon">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <h3 class="document-title">Código Financiero</h3>
+                        <p class="document-description">
+                            Contiene las disposiciones que regulan las finanzas públicas estatales y municipales, incluyendo presupuesto, contabilidad y fiscalización.
+                        </p>
+                        <a href="MARCO JURÍDICO/CODIGO-FINANCIERO.pdf" class="document-link" target="_blank">
+                            <span>Ver Documento</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-logo">
+                <div class="footer-logo-img">
+                    <img src="img/cropped-Logo-Terrenate-2024-2027-150x150.png" alt="Logo Terrenate">
+                </div>
+                <div class="footer-text">
+                    <h3>Municipio de Terrenate, Tlaxcala</h3>
+                    <p>2024-2027 · Gobierno Municipal</p>
+                    <p>Comprometidos con la transparencia y el desarrollo de nuestra comunidad</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2024-2027 Ayuntamiento de Terrenate, Tlaxcala. Todos los Derechos Reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
