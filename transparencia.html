@@ -159,8 +159,15 @@
                                     <i class="fas fa-file-alt"></i>
                                     <span>AVISOS DE PRIVACIDAD</span>
                                 </a></li>
+
+                                <li><a href="https://www.plataformadetransparencia.org.mx/" class="dropdown-item" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>PLATAFORMA NACIONAL DE TRANSPARENCIA</span>
+                                </a></li>
+                                
                             </ul>
                         </li>
+                        
 
                         <li class="nav-item">
                             <a href="sevac.html" class="nav-link">
@@ -2862,8 +2869,73 @@
         </div>
     </footer>
 
+    
+
     <!-- Script principal (debe estar en la misma carpeta) -->
     <script src="script.js"></script>
+    <script>
+        // ==========================================
+        // Lógica para los acordeones de Transparencia
+        // ==========================================
+        (function() {
+            'use strict';
+            
+            // Esperar a que el DOM esté completamente cargado
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initAccordions);
+            } else {
+                initAccordions();
+            }
+            
+            function initAccordions() {
+                // Buscar todos los items del acordeón
+                const toggleItems = document.querySelectorAll('.elementor-toggle-item');
+                
+                if (toggleItems.length === 0) return;
+                
+                toggleItems.forEach(item => {
+                    const title = item.querySelector('.elementor-tab-title');
+                    const content = item.querySelector('.elementor-tab-content');
+                    
+                    if (title && content) {
+                        // Asegurar que el contenido esté oculto inicialmente
+                        content.style.display = 'none';
+                        
+                        // Agregar cursor pointer para indicar que es clickeable
+                        title.style.cursor = 'pointer';
+                        
+                        // Agregar evento de click
+                        title.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            
+                            const isActive = title.classList.contains('active');
+                            
+                            // OPCIONAL: Cerrar otros acordeones (solo uno abierto a la vez)
+                            // Si prefieres que se puedan abrir múltiples, comenta este bloque
+                            toggleItems.forEach(otherItem => {
+                                const otherTitle = otherItem.querySelector('.elementor-tab-title');
+                                const otherContent = otherItem.querySelector('.elementor-tab-content');
+                                if (otherTitle !== title && otherContent && otherTitle.classList.contains('active')) {
+                                    otherTitle.classList.remove('active');
+                                    otherContent.style.display = 'none';
+                                }
+                            });
+                            
+                            // Alternar el acordeón actual
+                            if (!isActive) {
+                                title.classList.add('active');
+                                content.style.display = 'block';
+                            } else {
+                                title.classList.remove('active');
+                                content.style.display = 'none';
+                            }
+                        });
+                    }
+                });
+            }
+        })();
+        </script>
+    
 
 </body>
 </html>
